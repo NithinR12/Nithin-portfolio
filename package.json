@@ -62,8 +62,8 @@
     "@types/react-slick": "^0.23.10",
     "@types/styled-components": "^5.1.26",
     "@types/three": "^0.150.2",
-    "eslint": "^9.3.0",
-    "eslint-plugin-react": "^7.34.1",
+    "eslint": "^8.0.0",
+    "eslint-plugin-react": "^7.27.1",
     "gh-pages": "^5.0.0",
     "globals": "^15.3.0",
     "typescript-eslint": "^7.10.0"

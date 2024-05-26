@@ -5,7 +5,10 @@
 <ol>
   <li><a href="#about-the-project" alt="About the project">about-the-project</a></li>
   <li><a href="#built-with" alt="Built With" >built-with</a></li>
+<<<<<<< HEAD
  
+=======
+>>>>>>> 22fc69b25b8e640827e9b32ff9b978b427e40a36
 </ol>
 </details>
 
@@ -13,7 +16,10 @@
 
 The aim of this project is to create a portfolio that showcases both myself and my impressive work, providing recruiters with an understanding of my existing skills, tools, and development languages and frameworks being utilized presently.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 22fc69b25b8e640827e9b32ff9b978b427e40a36
 ## Built With
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://fr.reactjs.org/)&nbsp;&nbsp;

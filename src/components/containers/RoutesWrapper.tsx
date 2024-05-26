@@ -6,39 +6,53 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { Route, Routes, redirect } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
-import Header from "../layouts/Header";
 import Hi from "../layouts/Hi";
 import NotFound from "./NotFound";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register GSAP ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
-// context
+
+// Define context type
 type ContextValue = {
   timeline?: gsap.core.Timeline;
 };
+
+// Create context
 const MyContext = createContext<ContextValue>({});
+
 // Define a custom hook to access the context
 export const useMyContext = () => useContext(MyContext);
 
-const RoutesWrapper = () => {
+const RoutesWrapper: React.FC = () => {
   const [firstRender, setFirstRender] = useState(true);
+  const tl = useRef<gsap.core.Timeline>(gsap.timeline({}));
+
   useLayoutEffect(() => {
-    setTimeout(() => {
+    // Set firstRender to false after 2.5 seconds
+    const timer = setTimeout(() => {
       setFirstRender(false);
     }, 2500);
+
+    return () => clearTimeout(timer);
   }, []);
-  const tl = useRef<gsap.core.Timeline>(gsap.timeline({}));
+
   useEffect(() => {
     if (!firstRender) {
-      setTimeout(() => {
+      // Refresh ScrollTrigger after 0.5 seconds
+      const refreshTimer = setTimeout(() => {
         ScrollTrigger.refresh();
       }, 500);
+
+      return () => clearTimeout(refreshTimer);
     }
   }, [firstRender]);
+
   return (
-    <>
+    <MyContext.Provider value={{ timeline: tl.current }}>
       <Hi visible={firstRender} />
       {!firstRender && (
         <Routes>
@@ -46,7 +60,7 @@ const RoutesWrapper = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       )}
-    </>
+    </MyContext.Provider>
   );
 };
 

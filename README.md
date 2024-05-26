@@ -5,12 +5,7 @@
 <ol>
   <li><a href="#about-the-project" alt="About the project">about-the-project</a></li>
   <li><a href="#built-with" alt="Built With" >built-with</a></li>
-<<<<<<< HEAD
- 
-=======
->>>>>>> 22fc69b25b8e640827e9b32ff9b978b427e40a36
 </ol>
-</details>
 
 ## About the project
 
